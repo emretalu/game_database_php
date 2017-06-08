@@ -214,9 +214,9 @@ function getGameDetails(gameId){
 				
 				screenshot_url_id += "[" + sElem.cloudinary_id + "] - " + sElem.url + ", ";
 				
-				var sshotThumb = "//images.igdb.com/igdb/image/upload/t_thumb/"+sElem.cloudinary_id+".jpg";
-				var sshotCover = "//images.igdb.com/igdb/image/upload/t_cover_big/"+sElem.cloudinary_id+".jpg";
-				var sshotImage = "//images.igdb.com/igdb/image/upload/t_screenshot_big/"+sElem.cloudinary_id+".jpg";
+				var sshotThumb = "http://images.igdb.com/igdb/image/upload/t_thumb/"+sElem.cloudinary_id+".jpg";
+				var sshotCover = "http://images.igdb.com/igdb/image/upload/t_cover_big/"+sElem.cloudinary_id+".jpg";
+				var sshotImage = "http://images.igdb.com/igdb/image/upload/t_screenshot_big/"+sElem.cloudinary_id+".jpg";
 				sshotTable += '<tr><td><img src="'+sshotThumb+'"/></td><td class="tElem">'+sshotCover+'</td><td class="tElem">'+sshotImage+'</td></tr>';
 			});
 			
@@ -427,7 +427,7 @@ function copyToClipboard(elem) {
 		target.id = targetId;
 		target.style.position = "absolute";
 		target.style.left = "-9999px";
-		target.style.top = "0";
+		target.style.bottom = "0";
 		document.body.appendChild(target);
 	}
 	
@@ -439,7 +439,7 @@ function copyToClipboard(elem) {
 	var currentFocus = document.activeElement;
 	
     try{
-    	  succeed = document.execCommand("copy");
+    	succeed = document.execCommand("copy");
     }catch(e){
         succeed = false;
     }
